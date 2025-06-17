@@ -1,0 +1,387 @@
+
+/* Admin Login Modal */
+.login-modal {
+    position: fixed;
+    z-index: 4000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-content {
+    background-color: #181818;
+    padding: 40px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.login-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ff0000;
+}
+
+.login-content input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: #2d2d2d;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.login-content input::placeholder {
+    color: #aaaaaa;
+}
+
+.login-content button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-content button:hover {
+    background-color: #cc0000;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+    min-height: 100vh;
+    background-color: #0f0f0f;
+}
+
+.admin-header {
+    background-color: #181818;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.admin-header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.logout-btn {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #cc0000;
+}
+
+.admin-container {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+.admin-sidebar {
+    width: 250px;
+    background-color: #181818;
+    padding: 20px 0;
+    border-right: 1px solid #2d2d2d;
+}
+
+.admin-nav-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #aaaaaa;
+    padding: 15px 30px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+
+.admin-nav-btn:hover,
+.admin-nav-btn.active {
+    background-color: #2d2d2d;
+    color: #ff0000;
+}
+
+.admin-main {
+    flex: 1;
+    padding: 30px;
+}
+
+.admin-section {
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+.admin-section h2 {
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+/* Upload Form */
+.upload-form {
+    max-width: 600px;
+}
+
+.upload-form input,
+.upload-form textarea,
+.upload-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: #2d2d2d;
+    border: 1px solid #404040;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.upload-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.upload-form input::placeholder,
+.upload-form textarea::placeholder {
+    color: #aaaaaa;
+}
+
+.upload-form button {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.upload-form button:hover {
+    background-color: #cc0000;
+}
+
+/* Category Management */
+.category-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.category-form input {
+    flex: 1;
+    padding: 10px;
+    background-color: #2d2d2d;
+    border: 1px solid #404040;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+#addCategoryBtn {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addCategoryBtn:hover {
+    background-color: #cc0000;
+}
+
+.category-list {
+    display: grid;
+    gap: 10px;
+    max-width: 600px;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2d2d;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.category-name {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.delete-category {
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+.delete-category:hover {
+    background-color: #c82333;
+}
+
+/* Content Management */
+.content-list {
+    display: grid;
+    gap: 15px;
+}
+
+.content-item {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-info h4 {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.content-info p {
+    color: #aaaaaa;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.content-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+.edit-btn {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.edit-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Roles Section */
+.roles-info {
+    max-width: 600px;
+}
+
+.role-item {
+    background-color: #2d2d2d;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+/* Analytics Dashboard */
+.analytics-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+}
+
+.stat-card {
+    background-color: #2d2d2d;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: #aaaaaa;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.stat-number {
+    color: #ff0000;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Responsive Admin */
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column;
+    }
+    
+    .admin-sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        padding: 10px 0;
+    }
+    
+    .admin-nav-btn {
+        white-space: nowrap;
+        padding: 10px 20px;
+    }
+    
+    .admin-main {
+        padding: 20px;
+    }
+    
+    .category-form {
+        flex-direction: column;
+    }
+    
+    .content-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .analytics-dashboard {
+        grid-template-columns: 1fr;
+    }
+}
