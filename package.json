@@ -1,17 +1,4 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "outDir": "dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
-  },
-  "include": ["index.ts"]
-}
-{
   "name": "pitnest",
   "version": "1.0.0",
   "description": "PitNest - Video streaming platform",
