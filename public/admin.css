@@ -256,6 +256,123 @@
     gap: 15px;
 }
 
+/* Invite Users */
+.invite-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.invite-form input, .invite-form select {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    background-color: #2d2d2d;
+    border: 1px solid #404040;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+#sendInviteBtn {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#sendInviteBtn:hover {
+    background-color: #218838;
+}
+
+.pending-invites {
+    margin-top: 20px;
+}
+
+.pending-invites h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+#invitesList {
+    display: grid;
+    gap: 10px;
+}
+
+.invite-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2d2d;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.invite-info {
+    color: #ffffff;
+}
+
+.invite-status {
+    color: #ffc107;
+    font-size: 12px;
+}
+
+.revoke-invite {
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Password Management */
+.password-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #2d2d2d;
+    border-radius: 5px;
+}
+
+.password-section h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+.password-form input {
+    padding: 10px;
+    background-color: #181818;
+    border: 1px solid #404040;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.password-form button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.password-form button:hover {
+    background-color: #0056b3;
+}
+
 .content-item {
     background-color: #2d2d2d;
     padding: 20px;

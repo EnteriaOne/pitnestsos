@@ -56,6 +56,25 @@ class AdminPanel {
         addCategoryBtn.addEventListener('click', () => {
             this.addCategory();
         });
+
+        // Invite management
+        const sendInviteBtn = document.getElementById('sendInviteBtn');
+        sendInviteBtn.addEventListener('click', () => {
+            this.sendInvitation();
+        });
+
+        // Password management
+        const updatePasswordForm = document.getElementById('updatePasswordForm');
+        updatePasswordForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.updatePassword();
+        });
+
+        const resetPasswordForm = document.getElementById('resetPasswordForm');
+        resetPasswordForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.resetUserPassword();
+        });
     }
 
     async handleLogin() {
@@ -106,6 +125,7 @@ class AdminPanel {
     async loadDashboardData() {
         await this.loadCategories();
         await this.loadContent();
+        await this.loadInvitations();
         this.updateAnalytics();
     }
 
@@ -322,6 +342,138 @@ class AdminPanel {
             document.getElementById('totalCategories').textContent = categories.length;
         } catch (error) {
             console.error('Error updating analytics:', error);
+        }
+    }
+
+    async sendInvitation() {
+        const email = document.getElementById('inviteEmail').value.trim();
+        const role = document.getElementById('inviteRole').value;
+
+        if (!email) {
+            alert('Please enter an email address');
+            return;
+        }
+
+        if (!this.isValidEmail(email)) {
+            alert('Please enter a valid email address');
+            return;
+        }
+
+        try {
+            // Simulate API call - replace with actual endpoint
+            console.log(`Sending invitation to ${email} with role ${role}`);
+            alert(`Invitation sent to ${email} successfully!`);
+            
+            document.getElementById('inviteEmail').value = '';
+            this.loadInvitations();
+        } catch (error) {
+            console.error('Error sending invitation:', error);
+            alert('Failed to send invitation');
+        }
+    }
+
+    isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    async loadInvitations() {
+        // Simulate loading invitations - replace with actual API call
+        const mockInvitations = [
+            { email: 'user@example.com', role: 'user', status: 'pending', id: 1 },
+            { email: 'editor@example.com', role: 'admin', status: 'pending', id: 2 }
+        ];
+
+        const invitesList = document.getElementById('invitesList');
+        
+        if (mockInvitations.length === 0) {
+            invitesList.innerHTML = '<div style="color: #aaaaaa; text-align: center;">No pending invitations</div>';
+            return;
+        }
+
+        invitesList.innerHTML = mockInvitations.map(invite => `
+            <div class="invite-item">
+                <div class="invite-info">
+                    <div>${invite.email}</div>
+                    <div class="invite-status">Role: ${invite.role} | Status: ${invite.status}</div>
+                </div>
+                <button class="revoke-invite" onclick="adminPanel.revokeInvitation(${invite.id})">Revoke</button>
+            </div>
+        `).join('');
+    }
+
+    async revokeInvitation(inviteId) {
+        if (!confirm('Are you sure you want to revoke this invitation?')) {
+            return;
+        }
+
+        try {
+            // Simulate API call - replace with actual endpoint
+            console.log(`Revoking invitation ${inviteId}`);
+            alert('Invitation revoked successfully!');
+            this.loadInvitations();
+        } catch (error) {
+            console.error('Error revoking invitation:', error);
+            alert('Failed to revoke invitation');
+        }
+    }
+
+    async updatePassword() {
+        const currentPassword = document.getElementById('currentPassword').value;
+        const newPassword = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (!currentPassword || !newPassword || !confirmPassword) {
+            alert('Please fill in all password fields');
+            return;
+        }
+
+        if (newPassword !== confirmPassword) {
+            alert('New passwords do not match');
+            return;
+        }
+
+        if (newPassword.length < 8) {
+            alert('New password must be at least 8 characters long');
+            return;
+        }
+
+        try {
+            // Simulate API call - replace with actual endpoint
+            console.log('Updating password');
+            alert('Password updated successfully!');
+            document.getElementById('updatePasswordForm').reset();
+        } catch (error) {
+            console.error('Error updating password:', error);
+            alert('Failed to update password');
+        }
+    }
+
+    async resetUserPassword() {
+        const email = document.getElementById('resetEmail').value.trim();
+
+        if (!email) {
+            alert('Please enter a user email');
+            return;
+        }
+
+        if (!this.isValidEmail(email)) {
+            alert('Please enter a valid email address');
+            return;
+        }
+
+        if (!confirm(`Are you sure you want to send a password reset email to ${email}?`)) {
+            return;
+        }
+
+        try {
+            // Simulate API call - replace with actual endpoint
+            console.log(`Sending password reset to ${email}`);
+            alert(`Password reset email sent to ${email} successfully!`);
+            document.getElementById('resetEmail').value = '';
+        } catch (error) {
+            console.error('Error sending password reset:', error);
+            alert('Failed to send password reset email');
         }
     }
 }
